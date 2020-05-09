@@ -1,12 +1,8 @@
 var currentDateAndTime = Date(Date.now()); // exp: Fri Oct 25 2019 17:40:56 GMT-0400 (Eastern Daylight Time)`
-var currentHour = 10// new Date().getHours(); //Current hour in military time
-
-console.log("working");
-
+var currentHour = new Date().getHours(); //Current hour in military time
 var savedBtn = $(".btn");
 
 $("#currentDay").text(currentDateAndTime);
-
 
 for (var i = 9; i < 18; i++) {
   var currentHourText = localStorage.getItem("hour"+i);
@@ -39,12 +35,3 @@ savedBtn.on("click", function () {
   );
 });
 
-// function init() {
-//     for
-// }
-
-//save btn to local storage
-// JSON.stringify({
-//     username: 'htmldog',
-//     api_key: 'abc123xyz789'
-// })
