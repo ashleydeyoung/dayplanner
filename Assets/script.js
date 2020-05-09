@@ -4,7 +4,7 @@ var currentHour = new Date().getHours();//Current hour in military time
 
 console.log("working");
 
-
+var savedBtn = $(".btn");
 $("#currentDay").text(currentDateAndTime);
 
 function updateHours() {
@@ -25,11 +25,11 @@ function updateHours() {
 
 updateHours();
 
-$(".btn").on("click", function(){
+savedBtn.on("click", function(){
+
+    console.log($(this).val());
     var time = $(this).val();
-    console.log(time);
-    var storeInfo = $("#textArea" + time).val().trim()
-    localStorage.setItem("storeInfo");
+    localStorage.setItem("hour" + time, $("#textArea" + time).val().trim());
 })
 
 // function init() {
@@ -37,3 +37,7 @@ $(".btn").on("click", function(){
 // }
 
 //save btn to local storage
+// JSON.stringify({
+//     username: 'htmldog',
+//     api_key: 'abc123xyz789'
+// })
